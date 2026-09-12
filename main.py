@@ -20,7 +20,7 @@ def main():
     
     # Módulo 1: Validación
     es_valido = validar_matrices(cargas_reales, capacidades_maximas)
-    print(f"\n1. Validación Dimensional: {'Aprobada ✅' if es_valido else 'Rechazada ❌'}")
+    print(f"\n1. Validación Dimensional: {'Aprobada ' if es_valido else 'Rechazada ❌'}")
     
     if not es_valido:
         print("Error: Las matrices no son operativamente válidas.")
@@ -31,15 +31,15 @@ def main():
     criticas = resultado_ocupacion['coordenadas_criticas']
     print(f"\n2. Coordenadas con Sobrecarga Crítica (>100%):")
     if criticas:
-        print(f"   ⚠️ Alerta en celdas (Fila, Columna): {criticas}")
+        print(f"    Alerta en celdas (Fila, Columna): {criticas}")
     else:
-        print("   ✅ Ninguna celda supera el límite.")
+        print("    Ninguna celda supera el límite.")
     
     # Módulo 3: Balance y Simetría (Tolerancia de 300 kg para este vuelo)
     tolerancia_kg = 300.0
     resultado_balance = evaluar_balance(cargas_reales, tolerancia_kg)
     print(f"\n3. Evaluación de Simetría Lateral:")
-    print(f"   Estado: {'Aprobado ✅' if resultado_balance['estado_balance'] else 'Desbalanceado ⚠️'}")
+    print(f"   Estado: {'Aprobado ' if resultado_balance['estado_balance'] else 'Desbalanceado '}")
     print(f"   Desbalance absoluto: {resultado_balance['desbalance_lateral']} kg")
     print(f"   Vector longitudinal de masa: {resultado_balance['pesos_longitudinales']}")
     
