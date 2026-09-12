@@ -20,7 +20,7 @@ def main():
     
     # Módulo 1: Validación
     es_valido = validar_matrices(cargas_reales, capacidades_maximas)
-    print(f"\n1. Validación Dimensional: {'Aprobada ' if es_valido else 'Rechazada ❌'}")
+    print(f"\n1. Validación Dimensional: {'Aprobada ' if es_valido else 'Rechazada '}")
     
     if not es_valido:
         print("Error: Las matrices no son operativamente válidas.")
